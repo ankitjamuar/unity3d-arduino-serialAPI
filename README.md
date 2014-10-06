@@ -22,9 +22,9 @@ serial.GameAction += new SerialAPI.Serial.GameEventHandler(serial_GameAction);
 
  void serial_GameAction(string action)</code><br>
     {<br>
-        //Consume "action"  however you want</code>
+        &nbsp;&nbsp;&nbsp;//Consume "action"  however you want</code>
       <br>
-    {<br><code>
+    }<br><code>
 
 <br>
 
