@@ -70,8 +70,8 @@ namespace SerialAPI
                  */
 
 
-                //this.gameAction("YOUR DUMMY DATA");
-                //Thread.Sleep(1000);
+                this.gameAction("YOUR DUMMY DATA");
+                Thread.Sleep(1000);
 
             }
             else
