@@ -49,7 +49,7 @@ serial = new SerialAPI.Serial("COM1",true);  //true
 There is a sample sketch included inside Arduino sketch folder.<br>
 <b>IMPORTANT:</b>&nbsp;Data should be sent using Serial.println() since the API reads data line by line.
 <p>
-__________________________________________
+__________________________________________<br>
 <i>Note: In case you want to change code for dll there are few things you need to keep in mind:
 <br>
 1) DataReceived event is not supported by UNITY so a thread is implemented to get rid of blocking.<br>
