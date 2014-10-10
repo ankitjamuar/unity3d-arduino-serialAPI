@@ -34,10 +34,8 @@ false => enable data from hardware not dummy data.
       <br>
     }<br><code>
 
-<br>
 
 </p>
-<br>
 <h3> Enable Dummy data </h3>
 <p>
 In case the hardware is not available, there is params during object init that can generate dummy data you have to implement it inside the code and build the project again.<br>
@@ -55,5 +53,5 @@ serial = new SerialAPI.Serial("COM1",true);  //true
 
 </p>
 <br>
-Project was build using Visual Studion 2010<br>
+Project was build using Visual Studio 2010<br>
 For any help inbox me ankitsinha611@gmail.com
