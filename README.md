@@ -10,12 +10,20 @@ Create an instance of the serialAPI class:
 <br>
 <code>
 
-SerialAPI.Serial serial = new SerialAPI.Serial();
+SerialAPI.Serial serial = new SerialAPI.Serial("COM1",9600,false);
 <p>
 serial.GameAction += new SerialAPI.Serial.GameEventHandler(serial_GameAction);
 </p>
 </code>
-
+<p>
+<i>
+COM1 => Serial Port
+<br>
+9600 => Baud Rate
+<br>
+false => enable data from hardware not dummy data.
+</i>
+</p>
 <h3>In order to consume data you have to implement the call back function.</h3>
 <br>
 <code>
@@ -27,5 +35,12 @@ serial.GameAction += new SerialAPI.Serial.GameEventHandler(serial_GameAction);
     }<br><code>
 
 <br>
+
+</p>
+<p>
+<i>Note: In case you want to change code for dll there are few things you need to keep in mind:
+<br>
+1) DataReceived event is not supported by UNITY so a thread is implemented to get rid of blocking.<br>
+2) Sometimes there are dummy data in input buffer, so if you are trying to manipulate data in serial_GameAction() call back funtion, use try catch to inside the function to avoid erratic behaviour.<br>
 
 </p>
