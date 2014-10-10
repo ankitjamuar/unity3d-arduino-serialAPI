@@ -13,7 +13,6 @@ namespace SerialAPI
 
         /* Serial Params */
         static SerialPort serial;
-        private static int RATE = 9600;
         public string ERROR;
 
         /* Thread to Read serial data */
@@ -24,7 +23,7 @@ namespace SerialAPI
         public event GameEventHandler GameAction;
 
         /* Class Constructor  */
-        public Serial(string PORT, bool isDummy) 
+        public Serial(string PORT, int RATE, bool isDummy) 
         {
             serial = new SerialPort(PORT, RATE, Parity.None, 8, StopBits.One)
             {
