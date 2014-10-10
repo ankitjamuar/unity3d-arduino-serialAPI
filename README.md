@@ -25,9 +25,7 @@ false => enable data from hardware not dummy data.
 </i>
 </p>
 <h3>In order to consume data you have to implement the call back function.</h3>
-<br>
 <code>
-
  void serial_GameAction(string action)</code><br>
     {<br>
         &nbsp;&nbsp;&nbsp;//Consume "action"  however you want</code>
