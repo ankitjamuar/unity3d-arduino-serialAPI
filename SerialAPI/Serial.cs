@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.IO.Ports;
 using System.Threading;
@@ -14,7 +13,6 @@ namespace SerialAPI
 
         /* Serial Params */
         static SerialPort serial;
-        private static string PORT = "COM1";
         private static int RATE = 9600;
         public string ERROR;
 
@@ -26,14 +24,14 @@ namespace SerialAPI
         public event GameEventHandler GameAction;
 
         /* Class Constructor  */
-        public Serial()
+        public Serial(string PORT, bool isDummy) 
         {
-
             serial = new SerialPort(PORT, RATE, Parity.None, 8, StopBits.One)
             {
                 Handshake = Handshake.None
             };
 
+           
             try
             {
                 serial.Open();
@@ -41,8 +39,9 @@ namespace SerialAPI
             }
             catch (Exception ex)
             {
+
                 ERROR = "Error opening port: " + ex.Message;
-               
+
             }
 
 
@@ -52,28 +51,45 @@ namespace SerialAPI
              * 
              * Note: Unity dosent support DataReceived Event
             */
-            thread = new Thread(new ThreadStart(sendData));
+            thread = new Thread(() => sendData(ERROR, isDummy));
             thread.Start();
-
         }
 
+       
         /* Sends data to Event Handler registered by 3rd party */
-        private void sendData()
+        private void sendData(string errMsg, bool dummy)
         {
+            this.GameAction(errMsg);
 
-            while (true)
+            if (dummy)
             {
-                string tempData = serial.ReadLine();
-                this.GameAction(tempData);
+
+                /* 
+                 * In case Hardware is not available, API can be initialised with true params to receive dummy data.
+                 *  serial = new SerialAPI.Serial("COM1",true);  //true
+                 * 
+                 */
+
+
+                //this.gameAction("YOUR DUMMY DATA");
+                //Thread.Sleep(1000);
+
+            }
+            else
+            {
+                while (true)
+                {
+                    string tempData ="";
+                    tempData = serial.ReadLine();
+                    this.GameAction(tempData);                  
+                    tempData = "";
+                }
             }
 
+
+
         }
 
-        /* Error Reporting */
-        private void error(string error)
-        {
-            this.GameAction(error);
-        }
 
         /* Close the Thread */
         public void close()
@@ -82,20 +98,6 @@ namespace SerialAPI
             serial.Close();
         }
 
-        /* Test Function */
-        public void start()
-        {
-
-            for (var i = 0; i < 500; i++)
-            {
-                GameAction("BRAKE:1");
-
-            }
-        }
-
-
-
+              
     }
-
-
 }

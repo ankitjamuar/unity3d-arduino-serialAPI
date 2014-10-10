@@ -1,0 +1,4 @@
+C:\Users\Hp\Documents\Visual Studio 2010\Projects\SerialAPI\SerialAPI\bin\Release\SerialAPI.dll
+C:\Users\Hp\Documents\Visual Studio 2010\Projects\SerialAPI\SerialAPI\bin\Release\SerialAPI.pdb
+C:\Users\Hp\Documents\Visual Studio 2010\Projects\SerialAPI\SerialAPI\obj\Release\SerialAPI.dll
+C:\Users\Hp\Documents\Visual Studio 2010\Projects\SerialAPI\SerialAPI\obj\Release\SerialAPI.pdb
