@@ -41,7 +41,11 @@ false => enable data from hardware not dummy data.
 <h3> Enable Dummy data </h3>
 <p>
 In case the hardware is not available, there is params during object init that can generate dummy data you have to implement it inside the code and build the project again.<br>
-Line no 74, 75 in Serial.cs inside the project, uncomment it and build it again.<br>
+Line no 74, 75 in Serial.cs inside the project, change the data and build it again.<br>
+During object in use true as third param.<br>
+<code>
+serial = new SerialAPI.Serial("COM1",true);  //true
+</code>
 </p>
 <p>
 <i>Note: In case you want to change code for dll there are few things you need to keep in mind:
