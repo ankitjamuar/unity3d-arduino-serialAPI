@@ -5,6 +5,7 @@ Serial API (DLL with code) for UNITY 3D to communicate with Arduino
 
 <h2>How to use</h2>
 <p>
+A DLL file is inside SerialAPI/bin/Release <br>
 Import the DLL as new asset inside your unity project <br>
 Create an instance of the serialAPI class in the calss where you want to receive the data:
 <br>
