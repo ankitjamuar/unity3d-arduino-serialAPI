@@ -48,7 +48,7 @@ serial = new SerialAPI.Serial("COM1",true);  //true
 <i>Note: In case you want to change code for dll there are few things you need to keep in mind:
 <br>
 1) DataReceived event is not supported by UNITY so a thread is implemented to get rid of blocking.<br>
-2) Sometimes there are dummy data in input buffer, so if you are trying to manipulate data in serial_GameAction() call back funtion, use try catch to inside the function to avoid erratic behaviour.<br>
+2) Sometimes there are dummy data in input buffer, so if you are trying to manipulate data in serial_GameAction() call back funtion, use try catch inside the function to avoid erratic behaviour.<br>
 
 </p>
 <br>
