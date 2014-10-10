@@ -37,6 +37,12 @@ false => enable data from hardware not dummy data.
 <br>
 
 </p>
+<br>
+<h3> Enable Dummy data </h3>
+<p>
+In case the hardware is not available, there is params during object init that can generate dummy data you have to implement it inside the code and build the project again.<br>
+Line no 74, 75 in Serial.cs inside the project, uncomment it and build it again.<br>
+</p>
 <p>
 <i>Note: In case you want to change code for dll there are few things you need to keep in mind:
 <br>
@@ -44,3 +50,6 @@ false => enable data from hardware not dummy data.
 2) Sometimes there are dummy data in input buffer, so if you are trying to manipulate data in serial_GameAction() call back funtion, use try catch to inside the function to avoid erratic behaviour.<br>
 
 </p>
+<br>
+Project was build using Visual Studion 2010<br>
+For any help inbox me ankitsinha611@gmail.com
