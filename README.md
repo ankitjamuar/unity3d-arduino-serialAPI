@@ -41,7 +41,7 @@ In case the hardware is not available, there is params during object init that c
 Line no 74, 75 in Serial.cs inside the project, change the data and build it again.<br>
 During object in use true as third param.<br>
 <code>
-serial = new SerialAPI.Serial("COM1",true);  //true
+serial = new SerialAPI.Serial("COM1",9600,true);  //true
 </code>
 </p>
 <br>
